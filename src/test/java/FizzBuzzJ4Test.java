@@ -1,8 +1,23 @@
 import static org.assertj.core.api.Assertions.assertThat;
+
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
 public class FizzBuzzJ4Test
 {
+    @Before
+    public void executedBeforeEach()
+    {
+        System.out.println("Début d'éxecution du test");
+    }
+
+    @After
+    public void executedAfterEach()
+    {
+        System.out.println("Fin d'éxecution du test");
+    }
+
     @Test
     public void number_divisible_by_3_should_display_fizz()
     {
