@@ -1,12 +1,28 @@
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.extension.ExtendWith;
 
+
+@ExtendWith(DisplayExecutionTimeExtension.class)
 class FizzBuzzTest {
 
     @BeforeAll
-    static void testPrint(){
-        System.out.println("Yo Before all ! ");
+    static void testBeforeAll(){
+        System.out.println("Yo tests ?! ");
+    }
+
+    @AfterAll
+    static void testAfterAll(){
+        System.out.println("It was nice to work with you !");
+    }
+
+    @BeforeEach
+    void testBeforeEach(){
+        System.out.println("I'll Be Executed before each test :-) ");
+    }
+
+    @AfterEach
+    void testAfterEach(){
+        System.out.println("I'll be executed after each test ! ");
     }
 
     @Test
@@ -39,6 +55,7 @@ class FizzBuzzTest {
     }
 
     @Test
+    @Disabled
     void should_be_fizz_and_buzz_when_divided_by_three_and_by_five(){
 
         // GIVEN
