@@ -70,6 +70,7 @@ public class FizzBuzzJ4Test
         assertThat(result).isEqualTo(expected);
     }
 
+    @Ignore
     @Test
     public void number_not_divisible_by_3_or_5_should_display_the_number()
     {
