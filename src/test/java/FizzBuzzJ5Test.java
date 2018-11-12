@@ -3,7 +3,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 
 
 @ExtendWith(DisplayExecutionTimeExtension.class)
-class FizzBuzzTest {
+class FizzBuzzJ5Test {
 
     @BeforeAll
     static void testBeforeAll(){
