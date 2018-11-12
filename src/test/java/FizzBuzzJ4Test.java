@@ -1,8 +1,6 @@
 import static org.assertj.core.api.Assertions.assertThat;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.*;
 
 public class FizzBuzzJ4Test
 {
@@ -16,6 +14,12 @@ public class FizzBuzzJ4Test
     public void executedAfterEach()
     {
         System.out.println("Fin d'éxecution du test");
+    }
+
+    @AfterClass
+    public static void executedAfterAll()
+    {
+        System.out.println("\nFin d'exécution de tous les tests");
     }
 
     @Test
