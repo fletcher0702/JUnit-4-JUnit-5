@@ -26,8 +26,9 @@ class FizzBuzzTest {
     }
 
     @Test
-    void should_be_fizz_when_divided_by_3(){
+    void should_be_fizz_when_divided_by_3() throws InterruptedException {
 
+        Thread.sleep(2000);
         int candidate = 3;
 
         FizzBuzz fizzBuzz = new FizzBuzz();
@@ -40,8 +41,9 @@ class FizzBuzzTest {
     }
 
     @Test
-    void should_be_buzz_when_divided_by_five(){
+    void should_be_buzz_when_divided_by_five() throws InterruptedException {
 
+        Thread.sleep(2000);
 
         int candidate = 5;
 
@@ -56,7 +58,9 @@ class FizzBuzzTest {
 
     @Test
     @Disabled
-    void should_be_fizz_and_buzz_when_divided_by_three_and_by_five(){
+    void should_be_fizz_and_buzz_when_divided_by_three_and_by_five() throws InterruptedException {
+
+        Thread.sleep(2000);
 
         // GIVEN
         FizzBuzz fizzBuzz = new FizzBuzz();
