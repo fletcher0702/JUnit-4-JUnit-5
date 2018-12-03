@@ -16,6 +16,7 @@ public class RetryInvokerMethod extends InvokeMethod {
     public void evaluate() throws Throwable {
         for (int i = 0; i < this.retry; i++) {
             try {
+                System.out.println("Execution " + i);
                 method.invokeExplosively(test);
             } catch (Exception e) {
                 e.printStackTrace();

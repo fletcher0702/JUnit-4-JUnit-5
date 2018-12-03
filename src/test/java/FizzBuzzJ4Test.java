@@ -4,13 +4,20 @@ import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.runner.RunWith;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
 @RunWith(DisplayExecutionTimeRunner.class)
 public class FizzBuzzJ4Test {
 
-    @Before
-    public void testBeforeEach() {
-
-    }
+    ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+//
+//    @Before
+//    public void testBeforeEach() {
+//
+//        PrintStream out = new PrintStream(byteArrayOutputStream);
+//        System.setOut(out);
+//    }
 
     @After
     public void testAfterEach() {
@@ -25,6 +32,8 @@ public class FizzBuzzJ4Test {
 
         String expected = fizzBuzz.fizzBuzz(candidate);
         String FIZZ = "Fizz";
+
+        System.out.println(byteArrayOutputStream.toString());
 
         Assertions.assertSame(expected, FIZZ);
 
