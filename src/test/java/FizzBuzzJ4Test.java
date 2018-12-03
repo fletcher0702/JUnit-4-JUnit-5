@@ -1,19 +1,28 @@
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
-import org.junit.runners.Suite.SuiteClasses;
 
-public class FizzBuzzTest {
+@RunWith(RetryInvokerRunner.class)
+public class FizzBuzzJ4Test {
 
-    @BeforeAll
-    public static void testPrint() {
-        System.out.println("Yo Before all ! ");
+    @Before
+    public void testBeforeEach() {
+//        System.out.println("Before each method");
+//        System.out.println(System.currentTimeMillis());
+
+    }
+
+    @After
+    public void testAfterEach() {
+//        System.out.println("After");
+//        System.out.println(System.currentTimeMillis());
     }
 
     @Test
-    public void should_be_fizz_when_divided_by_3() {
-
+    @Before
+    public void should_be_fizz_when_divided_by_3() throws InterruptedException {
         int candidate = 3;
 
         FizzBuzz fizzBuzz = new FizzBuzz();
@@ -28,7 +37,6 @@ public class FizzBuzzTest {
     @Test
     public void should_be_buzz_when_divided_by_five() {
 
-
         int candidate = 5;
 
         FizzBuzz fizzBuzz = new FizzBuzz();
@@ -37,7 +45,6 @@ public class FizzBuzzTest {
         String BUZZ = "Buzz";
 
         Assertions.assertSame(expected, BUZZ);
-
     }
 
     @Test
