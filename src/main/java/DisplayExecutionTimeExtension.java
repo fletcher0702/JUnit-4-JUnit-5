@@ -13,6 +13,6 @@ public class DisplayExecutionTimeExtension implements BeforeEachCallback, AfterE
 
     public void afterEach(ExtensionContext extensionContext) {
         double end = System.currentTimeMillis() - start;
-        System.out.println("Test executed in : " + end + " s");
+        System.out.println("Test executed in : " + end + " ms");
     }
 }
