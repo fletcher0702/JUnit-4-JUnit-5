@@ -4,25 +4,21 @@ import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.runner.RunWith;
 
-@RunWith(RetryInvokerRunner.class)
+@RunWith(DisplayExecutionTimeRunner.class)
 public class FizzBuzzJ4Test {
 
     @Before
     public void testBeforeEach() {
-//        System.out.println("Before each method");
-//        System.out.println(System.currentTimeMillis());
 
     }
 
     @After
     public void testAfterEach() {
-//        System.out.println("After");
-//        System.out.println(System.currentTimeMillis());
     }
 
     @Test
     @Before
-    public void should_be_fizz_when_divided_by_3() throws InterruptedException {
+    public void should_be_fizz_when_divided_by_3() {
         int candidate = 3;
 
         FizzBuzz fizzBuzz = new FizzBuzz();
@@ -35,6 +31,7 @@ public class FizzBuzzJ4Test {
     }
 
     @Test
+    @After
     public void should_be_buzz_when_divided_by_five() {
 
         int candidate = 5;

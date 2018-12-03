@@ -1,4 +1,3 @@
-import org.assertj.core.internal.bytebuddy.implementation.bind.MethodDelegationBinder;
 import org.junit.internal.runners.statements.InvokeMethod;
 import org.junit.runners.model.FrameworkMethod;
 
@@ -15,10 +14,9 @@ public class RetryInvokerMethod extends InvokeMethod {
     }
 
     public void evaluate() throws Throwable {
-        for (int i = 0; i < retry; i++) {
+        for (int i = 0; i < this.retry; i++) {
             try {
                 method.invokeExplosively(test);
-                return;
             } catch (Exception e) {
                 e.printStackTrace();
             }

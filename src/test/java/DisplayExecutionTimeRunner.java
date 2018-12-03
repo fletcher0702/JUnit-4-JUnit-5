@@ -33,8 +33,9 @@ public class DisplayExecutionTimeRunner extends BlockJUnit4ClassRunner {
         Statement statement1 = new Statement() {
             public void evaluate() throws Throwable {
                statement.evaluate();
+               Thread.sleep(2000);
                 end = System.currentTimeMillis();
-                System.out.println("Duration: " +  (end - start) + " ms");
+                System.out.println("Test executed in : " +  (end - start) + " ms");
             }
         };
         return super.withAfters(method, test, statement1);
